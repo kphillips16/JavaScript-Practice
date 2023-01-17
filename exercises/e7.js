@@ -1,4 +1,4 @@
-import { data } from "../data/data";
+import { data } from "../data/data.js";
 
 // SPACE DATA EXERCISE 7
 // Return an array of all Planets names that have moons
@@ -6,7 +6,17 @@ import { data } from "../data/data";
 
 export function getPlanetsNamesWithMoons(data) {
   // Your code goes here...
+  var planets = data.planets
+  .filter(function(planets) {
+    return planets.moonsCount >= 1;
+  })
+  .map(function(planet) {
+    return planet.name;
+  })
+  return planets;
 }
+
+console.log((getPlanetsNamesWithMoons(data)));
 
 
 

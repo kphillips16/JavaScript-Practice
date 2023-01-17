@@ -1,4 +1,4 @@
-import { data } from "../data/data";
+import { data } from "../data/data.js";
 
 // SPACE DATA EXERCISE 14
 // Return the sum of orbital periods of all asteroids
@@ -6,9 +6,14 @@ import { data } from "../data/data";
 
 export function getOrbitalPeriodsSum(data) {
   // Your code goes here...
+  let sum = 0;
+  data.asteroids.map(function(asteroidStats) {
+    sum += asteroidStats.orbitalPeriod;
+  })
+  return sum;
 }
 
-
+console.log(getOrbitalPeriodsSum(data));
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-14"

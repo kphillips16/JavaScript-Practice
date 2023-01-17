@@ -1,4 +1,4 @@
-import { data } from "../data/data";
+import { data } from "../data/data.js";
 
 // SPACE DATA EXERCISE 12
 // Return the sum of all moons for all planets
@@ -6,9 +6,16 @@ import { data } from "../data/data";
 
 export function allPlanetsMoonsCount(data) {
   // Your code goes here...
+  let sum = 0;
+  data.planets.map(function(planetStats) {
+    if (planetStats.moonsCount !== undefined){
+      sum += planetStats.moonsCount;
+    }
+  })
+  return sum;
 }
 
-
+console.log(allPlanetsMoonsCount(data));
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-12"

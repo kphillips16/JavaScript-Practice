@@ -1,4 +1,4 @@
-import { data } from "../data/data";
+import { data } from "../data/data.js";
 
 // SPACE DATA EXERCISE 6
 // Return an array with all asteroids names discovered after a given year
@@ -6,6 +6,19 @@ import { data } from "../data/data";
 
 export function getAsteroidsDiscoveredAfterYear(data, year) {
   // Your code goes here...
+  var names = data.asteroids
+  .filter(function(asteroidStats) {
+    return asteroidStats.discoveryYear > year;
+  })
+  .map(function(asteroid) {
+    return asteroid.name;
+  });
+  return names;
+}
+
+//for testing purposes only
+for(var i = 1950; i < 2020; i++){
+  console.log(getAsteroidsDiscoveredAfterYear(data, i));
 }
 
 

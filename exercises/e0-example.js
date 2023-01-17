@@ -1,4 +1,4 @@
-import { data } from "../data/data";
+import { data } from "../data/data.js";
 
 // SPACE DATA SAMPLE EXERCISE 0
 // Return the name of the first Planet in the array
@@ -7,11 +7,11 @@ import { data } from "../data/data";
 export function getFirstPlanetName(data) {
   // Your code goes here...
   const planets = data.planets;
-  //console.log(planets);
+  // console.log(planets);
   return planets[0].name;
 }
 
-
+ console.log(getFirstPlanetName(data));
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-0"

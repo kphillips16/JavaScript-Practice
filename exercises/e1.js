@@ -1,4 +1,4 @@
-import { data } from "../data/data";
+import { data } from "../data/data.js";
 
 // SPACE DATA EXERCISE 1
 // Return an array of all Planets' names
@@ -6,9 +6,14 @@ import { data } from "../data/data";
 
 export function getPlanetNames(data) {
   // Your code goes here...
+  const planets = data.planets;
+  var names = planets.map(function(n) {
+    return n.name;
+  })
+  return names;
 }
 
-
+console.log(getPlanetNames(data));
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-1"
