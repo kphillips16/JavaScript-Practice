@@ -6,13 +6,13 @@ import { data } from "../data/data.js";
 
 export function getPlanetsWithNoMoons(data) {
   // Your code goes here...
-  let arr = [];
-  data.planets.map(function(planetStats) {
-    if (isNaN(planetStats.moonsCount)) {
-      arr.push(planetStats.name);
+  return data.planets.reduce(function(acc, currentValue) {
+    if (isNaN(currentValue.moonsCount)) {
+      acc.push(currentValue.name);
+      return acc;
     }
-  })
-  return arr;
+    return acc;
+  }, [])
 }
 
 console.log(getPlanetsWithNoMoons(data));

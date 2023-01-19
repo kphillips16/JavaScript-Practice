@@ -6,13 +6,13 @@ import { data } from "../data/data.js";
 
 export function lowMoonsPlanets(data) {
   // Your code goes here...
-  let arr = [];
-  data.planets.map(function(planetStats) {
-    if (planetStats.moonsCount < 10) {
-      arr.push(planetStats.name);
+  return data.planets.reduce(function(acc, currentValue) {
+    if (currentValue.moonsCount < 10) {
+      acc.push(currentValue.name);
+      return acc;
     }
-  })
-  return arr;
+    return acc;
+  }, []);
 }
 
 console.log(lowMoonsPlanets(data));

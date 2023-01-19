@@ -1,14 +1,12 @@
 // see e16.md
 
 export function find(array, callback) {
-    let arr = [];
     for(let element of array) {
         console.log(callback(element))
         if(callback(element)) {
-            arr.push(element);
+            return element;
         }
     }
-    return arr[0];
 }
 
 console.log(find(

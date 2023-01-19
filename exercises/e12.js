@@ -6,13 +6,12 @@ import { data } from "../data/data.js";
 
 export function allPlanetsMoonsCount(data) {
   // Your code goes here...
-  let sum = 0;
-  data.planets.map(function(planetStats) {
-    if (planetStats.moonsCount !== undefined){
-      sum += planetStats.moonsCount;
+  return data.planets.reduce(function (acc, currentValue) {
+    if (currentValue.moonsCount !== undefined) {
+      return acc += currentValue.moonsCount;
     }
-  })
-  return sum;
+    return acc;
+  }, 0);
 }
 
 console.log(allPlanetsMoonsCount(data));

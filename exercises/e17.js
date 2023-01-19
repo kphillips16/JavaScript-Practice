@@ -1,8 +1,8 @@
 export function minBy(array, cb) {
     let obj;
-    let num = 100000;
+    let num;
     for(let element of array) {
-        if(cb(element) < num) {
+        if(cb(element) < num || !num) {
             obj = element;
             num = cb(element);
         }
@@ -20,9 +20,9 @@ console.log(minBy(
 
 export function maxBy(array, cb) {
     let obj;
-    let num = 0;
+    let num;
     for(let element of array) {
-        if(cb(element) > num) {
+        if(cb(element) > num || !num) {
             obj = element;
             num = cb(element);
         }
